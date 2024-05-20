@@ -13,6 +13,9 @@
 		24EEFECF2BFB29010053376B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 24EEFECE2BFB29010053376B /* Base */; };
 		24EEFED12BFB29020053376B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24EEFED02BFB29020053376B /* Assets.xcassets */; };
 		24EEFED42BFB29020053376B /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 24EEFED32BFB29020053376B /* Base */; };
+		24EEFEDC2BFB29410053376B /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EEFEDB2BFB29410053376B /* EmotionViewController.swift */; };
+		24EEFEDE2BFB296F0053376B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EEFEDD2BFB296F0053376B /* SearchViewController.swift */; };
+		24EEFEE02BFB29780053376B /* NetflixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EEFEDF2BFB29780053376B /* NetflixViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		24EEFED02BFB29020053376B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24EEFED32BFB29020053376B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24EEFED52BFB29020053376B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24EEFEDB2BFB29410053376B /* EmotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
+		24EEFEDD2BFB296F0053376B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		24EEFEDF2BFB29780053376B /* NetflixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				24EEFEC72BFB29010053376B /* AppDelegate.swift */,
 				24EEFEC92BFB29010053376B /* SceneDelegate.swift */,
 				24EEFECB2BFB29010053376B /* ViewController.swift */,
+				24EEFEDB2BFB29410053376B /* EmotionViewController.swift */,
+				24EEFEDD2BFB296F0053376B /* SearchViewController.swift */,
+				24EEFEDF2BFB29780053376B /* NetflixViewController.swift */,
 				24EEFECD2BFB29010053376B /* Main.storyboard */,
 				24EEFED02BFB29020053376B /* Assets.xcassets */,
 				24EEFED22BFB29020053376B /* LaunchScreen.storyboard */,
@@ -138,6 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24EEFEDE2BFB296F0053376B /* SearchViewController.swift in Sources */,
+				24EEFEE02BFB29780053376B /* NetflixViewController.swift in Sources */,
+				24EEFEDC2BFB29410053376B /* EmotionViewController.swift in Sources */,
 				24EEFECC2BFB29010053376B /* ViewController.swift in Sources */,
 				24EEFEC82BFB29010053376B /* AppDelegate.swift in Sources */,
 				24EEFECA2BFB29010053376B /* SceneDelegate.swift in Sources */,
