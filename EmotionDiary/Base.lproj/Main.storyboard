@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CQX-kn-dv1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IHG-lt-mr8">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
@@ -324,11 +324,124 @@
                     <view key="view" contentMode="scaleToFill" id="OUk-eR-cj5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="78C-vW-1nB">
+                                <rect key="frame" x="20" y="79" width="353" height="40"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jTb-O7-t16">
+                                        <rect key="frame" x="0.0" y="0.0" width="309" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="returnTapped:" destination="IHG-lt-mr8" eventType="editingDidEndOnExit" id="M2w-oo-riP"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rw9-Hc-cyU">
+                                        <rect key="frame" x="313" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="aFL-m1-cWV"/>
+                                            <constraint firstAttribute="height" constant="40" id="xX7-gS-Vcl"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="searchButtonTapped:" destination="IHG-lt-mr8" eventType="touchUpInside" id="2EW-4t-EYa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="85c-de-tDP">
+                                <rect key="frame" x="20" y="139" width="353" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWg-Y8-33u">
+                                        <rect key="frame" x="0.0" y="0.0" width="80.666666666666671" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Jpe-Ef-dQH"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="wordButtonTapped:" destination="IHG-lt-mr8" eventType="touchUpInside" id="5ls-wq-HMv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXH-JL-2iz">
+                                        <rect key="frame" x="90.666666666666686" y="0.0" width="81" height="40"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="wordButtonTapped:" destination="IHG-lt-mr8" eventType="touchUpInside" id="mL8-PQ-jhz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKX-d8-UWN">
+                                        <rect key="frame" x="181.66666666666666" y="0.0" width="80.666666666666657" height="40"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="wordButtonTapped:" destination="IHG-lt-mr8" eventType="touchUpInside" id="GBC-Lb-9OW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vma-Fh-sL1">
+                                        <rect key="frame" x="272.33333333333331" y="0.0" width="80.666666666666686" height="40"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="wordButtonTapped:" destination="IHG-lt-mr8" eventType="touchUpInside" id="oFT-X6-G23"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="01U-BL-Jq4">
+                                <rect key="frame" x="20" y="279" width="353" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="sjj-Tf-5xh"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3H-Ye-KXP">
+                                <rect key="frame" x="40" y="299" width="313" height="160"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RMe-jc-Xaa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="L3H-Ye-KXP" firstAttribute="top" secondItem="01U-BL-Jq4" secondAttribute="top" constant="20" id="1wn-ru-2mz"/>
+                            <constraint firstItem="RMe-jc-Xaa" firstAttribute="trailing" secondItem="78C-vW-1nB" secondAttribute="trailing" constant="20" id="38o-qc-Qyl"/>
+                            <constraint firstItem="85c-de-tDP" firstAttribute="leading" secondItem="RMe-jc-Xaa" secondAttribute="leading" constant="20" id="Fhw-fH-FdS"/>
+                            <constraint firstItem="01U-BL-Jq4" firstAttribute="leading" secondItem="RMe-jc-Xaa" secondAttribute="leading" constant="20" id="Hx8-OF-jRg"/>
+                            <constraint firstItem="L3H-Ye-KXP" firstAttribute="trailing" secondItem="01U-BL-Jq4" secondAttribute="trailing" constant="-20" id="IGR-PQ-7G5"/>
+                            <constraint firstItem="RMe-jc-Xaa" firstAttribute="trailing" secondItem="01U-BL-Jq4" secondAttribute="trailing" constant="20" id="LUz-Oj-fSc"/>
+                            <constraint firstItem="85c-de-tDP" firstAttribute="top" secondItem="78C-vW-1nB" secondAttribute="bottom" constant="20" id="Ln7-27-BPg"/>
+                            <constraint firstItem="01U-BL-Jq4" firstAttribute="top" secondItem="85c-de-tDP" secondAttribute="bottom" constant="100" id="NDV-4l-tpw"/>
+                            <constraint firstItem="RMe-jc-Xaa" firstAttribute="trailing" secondItem="85c-de-tDP" secondAttribute="trailing" constant="20" id="NqK-sp-gd2"/>
+                            <constraint firstItem="78C-vW-1nB" firstAttribute="top" secondItem="RMe-jc-Xaa" secondAttribute="top" constant="20" id="SOS-g1-v54"/>
+                            <constraint firstItem="L3H-Ye-KXP" firstAttribute="bottom" secondItem="01U-BL-Jq4" secondAttribute="bottom" constant="-20" id="VI4-G7-DmZ"/>
+                            <constraint firstItem="78C-vW-1nB" firstAttribute="leading" secondItem="RMe-jc-Xaa" secondAttribute="leading" constant="20" id="Vav-Y1-po9"/>
+                            <constraint firstItem="L3H-Ye-KXP" firstAttribute="leading" secondItem="01U-BL-Jq4" secondAttribute="leading" constant="20" id="yrK-eA-7xa"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="taO-7J-KlO" appends="YES" id="IOF-8s-Dho"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="01U-BL-Jq4" id="jmz-yo-PhT"/>
+                        <outlet property="resultLabel" destination="L3H-Ye-KXP" id="cRE-Kc-gbC"/>
+                        <outlet property="searchButton" destination="Rw9-Hc-cyU" id="Eba-Uu-otC"/>
+                        <outlet property="searchTextField" destination="jTb-O7-t16" id="TQE-77-zkC"/>
+                        <outletCollection property="wordButtonList" destination="jWg-Y8-33u" collectionClass="NSMutableArray" id="eEu-J8-kLF"/>
+                        <outletCollection property="wordButtonList" destination="NXH-JL-2iz" collectionClass="NSMutableArray" id="7uN-ap-Ir9"/>
+                        <outletCollection property="wordButtonList" destination="GKX-d8-UWN" collectionClass="NSMutableArray" id="sAe-uc-zYy"/>
+                        <outletCollection property="wordButtonList" destination="vma-Fh-sL1" collectionClass="NSMutableArray" id="QxJ-ym-MPH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cW4-rz-Nek" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="taO-7J-KlO">
+                    <connections>
+                        <action selector="keyboardDismiss:" destination="IHG-lt-mr8" id="dnN-Q3-km6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2052.6717557251909" y="-27.464788732394368"/>
         </scene>
