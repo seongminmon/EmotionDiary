@@ -97,7 +97,6 @@ class SearchViewController: UIViewController {
         }
         resultLabel.text = "검색 결과가 없습니다."
         
-        
 //        if let description = wordDictionary[word] {
 //            resultLabel.text = description
 //        } else {

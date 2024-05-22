@@ -11,6 +11,7 @@ class EmotionViewController: UIViewController {
     
     @IBOutlet var buttonList: [UIButton]!
     @IBOutlet var labelList: [UILabel]!
+    @IBOutlet var resetButton: UIButton!
     
     let wordList: [String] = [
         "행복해",
@@ -33,10 +34,14 @@ class EmotionViewController: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = .black
         
         for i in 0..<buttonList.count {
+            // 저장된 데이터 가져오기
+            countList[i] = UserDefaults.standard.integer(forKey: "count\(i)")
+            
             setupButton(index: i)
             setupLabel(index: i)
         }
         
+        resetButton.setTitle("리셋", for: .normal)
     }
     
     func setupButton(index: Int) {
@@ -55,5 +60,18 @@ class EmotionViewController: UIViewController {
     @IBAction func emotionButtonTapped(_ sender: UIButton) {
         countList[sender.tag] += 1
         labelList[sender.tag].text = "\(wordList[sender.tag]) \(countList[sender.tag])"
+        
+        // 데이터 저장
+        UserDefaults.standard.setValue(countList[sender.tag], forKey: "count\(sender.tag)")
     }
+    
+    @IBAction func resetButtonTapped(_ sender: UIButton) {
+        countList = [Int](repeating: 0, count: 9)
+        for i in 0..<9 {
+            setupLabel(index: i)
+            // 데이터 저장
+            UserDefaults.standard.setValue(countList[i], forKey: "count\(i)")
+        }
+    }
+    
 }
