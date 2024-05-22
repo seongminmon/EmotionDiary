@@ -36,9 +36,14 @@ class SearchViewController: UIViewController {
 //        "AAA": "대소문자 비교"
     ]
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 마지막 검색어 불러오기
+        let word = UserDefaults.standard.string(forKey: "word")
+        // 마지막 검색어가 존재하면 텍스트필드에 세팅하고 검색
+        searchTextField.text = word
+        searchNewWordWithDictionary()
 
         searchTextField.placeholder = "신조어를 검색해보세요."
         searchTextField.layer.borderColor = UIColor.black.cgColor
@@ -59,7 +64,10 @@ class SearchViewController: UIViewController {
         backgroundImageView.image = UIImage(named: "background")
         backgroundImageView.contentMode = .scaleAspectFill
         
-        resultLabel.text = "신조어의 뜻이 표시됩니다."
+        // 기존 저장된 단어가 없을 때
+        if word == "" {
+            resultLabel.text = "신조어의 뜻이 표시됩니다."
+        }
         resultLabel.font = .systemFont(ofSize: 20)
         resultLabel.textAlignment = .center
         resultLabel.numberOfLines = 0
@@ -87,6 +95,9 @@ class SearchViewController: UIViewController {
     
     // 텍스트필드의 텍스트를 딕셔너리에서 검색해주는 함수 (대소문자 구분 없이)
     func searchNewWordWithDictionary() {
+        // 마지막 검색어 저장하기
+        UserDefaults.standard.setValue(searchTextField.text, forKey: "word")
+        
         let word = (searchTextField.text ?? "").lowercased()
         
         for key in wordDictionary.keys {
