@@ -7,25 +7,40 @@
 
 import UIKit
 
+struct Emotion {
+    let word: String
+    var index: Int
+    var number: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "count\(index)")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "count\(index)")
+        }
+    }
+    
+    var labelString: String {
+        return "\(word) \(number)"
+    }
+}
+
 class EmotionViewController: UIViewController {
     
     @IBOutlet var buttonList: [UIButton]!
     @IBOutlet var labelList: [UILabel]!
     @IBOutlet var resetButton: UIButton!
     
-    let wordList: [String] = [
-        "행복해",
-        "사랑해",
-        "좋아해",
-        "당황해",
-        "속상해",
-        "우울해",
-        "심심해",
-        "행복해",
-        "행복해"
+    var emotionList: [Emotion] = [
+        Emotion(word: "행복해", index: 0),
+        Emotion(word: "사랑해", index: 1),
+        Emotion(word: "좋아해", index: 2),
+        Emotion(word: "당황해", index: 3),
+        Emotion(word: "속상해", index: 4),
+        Emotion(word: "우울해", index: 5),
+        Emotion(word: "심심해", index: 6),
+        Emotion(word: "찝찝해", index: 7),
+        Emotion(word: "울적해", index: 8),
     ]
-    
-    var countList = [Int](repeating: 0, count: 9)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,15 +48,17 @@ class EmotionViewController: UIViewController {
         navigationItem.title = "감정 다이어리"
         navigationItem.leftBarButtonItem?.tintColor = .black
         
-        for i in 0..<buttonList.count {
-            // 저장된 데이터 가져오기
-            countList[i] = UserDefaults.standard.integer(forKey: "count\(i)")
-            
-            setupButton(index: i)
+        for i in 0..<emotionList.count {
             setupLabel(index: i)
+            setupButton(index: i)
         }
         
         resetButton.setTitle("리셋", for: .normal)
+    }
+    
+    func setupLabel(index: Int) {
+        labelList[index].text = emotionList[index].labelString
+        labelList[index].textAlignment = .center
     }
     
     func setupButton(index: Int) {
@@ -52,25 +69,15 @@ class EmotionViewController: UIViewController {
         buttonList[index].tag = index
     }
     
-    func setupLabel(index: Int) {
-        labelList[index].text = "\(wordList[index]) \(countList[index])"
-        labelList[index].textAlignment = .center
-    }
-    
     @IBAction func emotionButtonTapped(_ sender: UIButton) {
-        countList[sender.tag] += 1
-        labelList[sender.tag].text = "\(wordList[sender.tag]) \(countList[sender.tag])"
-        
-        // 데이터 저장
-        UserDefaults.standard.setValue(countList[sender.tag], forKey: "count\(sender.tag)")
+        emotionList[sender.tag].number += 1
+        labelList[sender.tag].text = emotionList[sender.tag].labelString
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
-        countList = [Int](repeating: 0, count: 9)
-        for i in 0..<9 {
-            setupLabel(index: i)
-            // 데이터 저장
-            UserDefaults.standard.setValue(countList[i], forKey: "count\(i)")
+        for i in 0..<emotionList.count {
+            emotionList[i].number = 0
+            labelList[i].text = emotionList[i].labelString
         }
     }
     
